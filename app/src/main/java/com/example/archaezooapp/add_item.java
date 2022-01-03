@@ -37,7 +37,7 @@ public class add_item extends AppCompatActivity {
                             "Other Anthropic marks","Pathology","Notes"};
     static  HSSFRow columnrow = hssfSheet.createRow(0);
     String site,date,idno,zone,trench,layer,number,geocordinates,orientation,dip,soil,isolated,articulated,dimensions,length,breadth,thickness,colour,weight,remains,sampled,photographed;
-
+    String x,y;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +71,9 @@ public class add_item extends AppCompatActivity {
         trench=sharedPreferences.getString("trench","");
         layer=sharedPreferences.getString("layer","");
         number=sharedPreferences.getString("number","");
-        geocordinates="latlong";
+        x=sharedPreferences.getString("latitude","");
+        y=sharedPreferences.getString("longitude","");
+        geocordinates=x+" , "+y;
         orientation=sharedPreferences.getString("orientation","");
         dip=sharedPreferences.getString("dip","");
         soil=sharedPreferences.getString("soil","");

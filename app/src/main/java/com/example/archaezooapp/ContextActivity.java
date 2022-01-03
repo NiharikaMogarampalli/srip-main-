@@ -103,6 +103,10 @@ public class ContextActivity extends AppCompatActivity {
         trench.setText(sharedPreferences.getString("trench",""));
         layer.setText(sharedPreferences.getString("layer",""));
         number.setText(sharedPreferences.getString("number",""));
+
+        latpt.setText(sharedPreferences.getString("latitude",""));
+        longpt.setText(sharedPreferences.getString("longitude",""));
+
         orientation.setText(sharedPreferences.getString("orientation",""));
         dip.setText(sharedPreferences.getString("dip",""));
         soil.setText(sharedPreferences.getString("soil",""));
@@ -147,6 +151,10 @@ public class ContextActivity extends AppCompatActivity {
         String trencht=trench.getText().toString();
         String layert=layer.getText().toString();
         String numbert=number.getText().toString();
+
+        String latitudet=latpt.getText().toString();
+        String longitudet=longpt.getText().toString();
+
         String orientationt=orientation.getText().toString();
         String dipt=dip.getText().toString();
         String soilt=soil.getText().toString();
@@ -187,6 +195,10 @@ public class ContextActivity extends AppCompatActivity {
         editor.putString("trench",trencht);
         editor.putString("layer",layert);
         editor.putString("number",numbert);
+
+        editor.putString("latitude",latitudet);
+        editor.putString("longitude",longitudet);
+
         editor.putString("orientation",orientationt);
         editor.putString("dip",dipt);
         editor.putString("soil",soilt);

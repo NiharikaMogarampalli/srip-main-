@@ -56,6 +56,7 @@ public class AddNewDisplayOld extends AppCompatActivity implements ExampleDialog
         ExampleDialog exampleDialog=new ExampleDialog();
         exampleDialog.show(getSupportFragmentManager(),"example dialog");
 
+
     }
 
     @Override
@@ -63,6 +64,14 @@ public class AddNewDisplayOld extends AppCompatActivity implements ExampleDialog
         editor.putString(filename,"");
         editor.commit();
         item.add(new RVModel(R.drawable.editicon,""+filename,R.drawable.downloadicon));
+        filedatabase=getSharedPreferences("metadata", Context.MODE_PRIVATE);
+        editor=filedatabase.edit();
+
+        Map<String, ?> allEntries = filedatabase.getAll();
+        for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+            item.add(new RVModel(R.drawable.editicon,""+entry.getKey(),R.drawable.downloadicon));
+        }
+
 
     }
 
